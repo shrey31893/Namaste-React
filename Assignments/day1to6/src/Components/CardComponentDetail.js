@@ -36,8 +36,9 @@ const CardComponentDetail = () => {
           </div>
         </div>
       </div>
+      <br/>
       <Link to={`/`}>
-        <button> Back To List</button>
+        <button className="btn btn-primary"> Back To List</button>
       </Link>
     </>
   );
