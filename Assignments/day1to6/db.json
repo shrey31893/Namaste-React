@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "ap221882",
+      "login": "test",
+      "bio": "test",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 2,
+      "username": "roshantrivedi",
+      "login": "roshan",
+      "bio": "roshan",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 3,
+      "username": "laxmi20936",
+      "login": "laxmi20936",
+      "bio": "teslaxmi20936t",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 4,
+      "username": "ChaitraMalali",
+      "login": "ChaitraMalali",
+      "bio": "ChaitraMalali",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 5,
+      "username": "vijeshnk",
+      "login": "vijeshnk",
+      "bio": "vijeshnk",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 6,
+      "username": "pujarini",
+      "login": "pujarini",
+      "bio": "pujarini",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    { "id": 7, "username": "GouravGoswami22",
+    "login": "GouravGoswami22",
+    "bio": "GouravGoswami22",
+    "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp" },
+    {
+      "id": 8,
+      "username": "MallikarjunnKB",
+      "login": "MallikarjunnKB",
+      "bio": "MallikarjunnKB",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    },
+    {
+      "id": 9,
+      "username": "shrey31893",
+      "login": "shrey31893",
+      "bio": "shrey31893",
+      "avatar_url": "https://miro.medium.com/max/720/1*kxkMlpCrtaM3S5ZPjc4Aeg.webp"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

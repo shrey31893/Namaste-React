@@ -1,0 +1,24 @@
+{
+  "name": "day-2-ignite",
+  "version": "1.0.0",
+  "description": "",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.1",
+    "parcel": "^2.8.0",
+    "process": "^0.11.10",
+    "react-router-dom": "^6.4.5"
+  }
+}

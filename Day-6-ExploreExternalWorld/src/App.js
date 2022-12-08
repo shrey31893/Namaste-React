@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import CardComponent from "./CardComponent.js";
 import { BeautifulCardComponent } from "./BeautifulCardComponent.js";
@@ -7,6 +7,7 @@ import data from "./data.json";
 import { title } from "./constants.js"; // -- named export.
 // import * as constants from './constants.js'  -- usage -- {{constants.title}}
 import SearchBar from "./SearchBar.js";
+import NoResultFoundComponent from "./NoResultFoundComponent.js";
 
 const HeadingComponent = () => {
   return (
@@ -17,6 +18,8 @@ const HeadingComponent = () => {
 };
 
 const CardContainer = ({ filteredRestaurants }) => {
+  if (filteredRestaurants.length == 0) return <NoResultFoundComponent />;
+
   const cards = filteredRestaurants.map((restaurantData, index) => {
     return (
       <CardComponent restaurant={restaurantData} key={restaurantData.id} />
@@ -30,7 +33,13 @@ const CardContainer1 = () =>
   data.map((data, index) => <CardComponent restaurant={data} />);
 
 const BodyComponent = () => {
-  const [filteredRestaurants, setFilteredRestaurants] = useState(data);
+   const [filteredRestaurants, setFilteredRestaurants] = useState(data);
+  //const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="Card-Container">
       <SearchBar setFilteredRestaurants={setFilteredRestaurants} />
@@ -38,6 +47,13 @@ const BodyComponent = () => {
     </div>
   );
 };
+
+async function fetchData() {
+  const data = await fetch("");
+  const json = await data.json();
+
+  console.log(json);
+}
 
 const AppLayoutComponent = () => {
   return (
