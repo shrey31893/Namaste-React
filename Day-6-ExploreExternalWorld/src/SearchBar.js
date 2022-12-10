@@ -1,22 +1,25 @@
 import { useState } from "react";
-import data from "./data.json";
+//import data from "./data.json";
 
-const searchRestaurants = (searchText) => {
+
+// now this becomes pure functions - who takes parameter and returns the filtered data.
+const searchRestaurants = (searchText, restaurants) => {
   //to lower case.
-  return data.filter(x => x.name.includes(searchText));
+  return restaurants?.filter(x => x.data.name.includes(searchText));
 };
 
-const SearchBar = ({ setFilteredRestaurants }) => {
+const SearchBar = ({ setFilteredRestaurants,restaurants }) => {
   const [searchText, setSearchText] = useState("");
+  console.log("restaurants",restaurants.data)
   return (
     <div className="search">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           if (searchText === "") {
-            setFilteredRestaurants(data);
+            setFilteredRestaurants(restaurants);
           } else {
-            const filteredRestaurants = searchRestaurants(searchText);
+            const filteredRestaurants = searchRestaurants(searchText, restaurants);
             console.log(filteredRestaurants);
             setFilteredRestaurants(filteredRestaurants);
           }

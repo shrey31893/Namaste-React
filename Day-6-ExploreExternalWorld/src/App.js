@@ -33,8 +33,9 @@ const CardContainer1 = () =>
   data.map((data, index) => <CardComponent restaurant={data} />);
 
 const BodyComponent = () => {
-   const [filteredRestaurants, setFilteredRestaurants] = useState(data);
-  //const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+   //const [filteredRestaurants, setFilteredRestaurants] = useState(data);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -42,18 +43,22 @@ const BodyComponent = () => {
 
   return (
     <div className="Card-Container">
-      <SearchBar setFilteredRestaurants={setFilteredRestaurants} />
+      <SearchBar setFilteredRestaurants={setFilteredRestaurants} restaurants = {restaurants}/>
       <CardContainer filteredRestaurants={filteredRestaurants} />
     </div>
   );
+
+  async function fetchData() {
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.196537&lng=72.63304&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    console.log(json);
+    console.log(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
 };
 
-async function fetchData() {
-  const data = await fetch("");
-  const json = await data.json();
 
-  console.log(json);
-}
 
 const AppLayoutComponent = () => {
   return (
