@@ -1,0 +1,30 @@
+[
+    {
+      "img": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nlojoe2zxhshjzzx4fte",
+      "name": "La pinoz pizza",
+      "cusine": "Italian",
+      "stars": 3.5,
+      "id": 1
+    },
+    {
+      "img": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vyba6leelnfvb7pymrzl",
+      "name": "Barbequee nations",
+      "cusine": "Barbequee",
+      "stars": 4.5,
+      "id": 2
+    },
+    {
+      "img": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ddfimgjeaos4s6s43mbb",
+      "name": "frankie nations",
+      "cusine": "frankie",
+      "stars": 4,
+      "id": 3
+    },
+    {
+      "img": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xoyfoihyn0q2ecvw79gc",
+      "name": "salad.com",
+      "cusine": "salad",
+      "stars": 3,
+      "id": 4
+    }
+  ]
