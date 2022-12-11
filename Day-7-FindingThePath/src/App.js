@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import CardComponent from "./CardComponent.js";
-import { BeautifulCardComponent } from "./BeautifulCardComponent.js";
-import data from "./data.json";
+import CardComponent from "./components/CardComponent.js";
+import { BeautifulCardComponent } from "./components/BeautifulCardComponent.js";
+import data from "./utils/data.json";
 // import title from './constants.js' --default export.
-import { title } from "./constants.js"; // -- named export.
+import { title } from "./utils/constants.js"; // -- named export.
 // import * as constants from './constants.js'  -- usage -- {{constants.title}}
-import SearchBar from "./SearchBar.js";
-import NoResultFoundComponent from "./NoResultFoundComponent.js";
+import SearchBar from "./components/SearchBar.js";
+import NoResultFoundComponent from "./components/NoResultFoundComponent.js";
 
 const HeadingComponent = () => {
   return (
@@ -20,7 +20,7 @@ const HeadingComponent = () => {
 const CardContainer = ({ filteredRestaurants }) => {
   if (filteredRestaurants.length == 0) return <NoResultFoundComponent />;
 
-  const cards = filteredRestaurants.map((restaurantData, index) => {
+  const cards = filteredRestaurants && filteredRestaurants.map((restaurantData, index) => {
     return (
       <CardComponent restaurant={restaurantData} key={restaurantData.id} />
     );
@@ -57,8 +57,6 @@ const BodyComponent = () => {
     setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 };
-
-
 
 const AppLayoutComponent = () => {
   return (

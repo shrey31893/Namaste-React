@@ -5,7 +5,7 @@
 // we always need to export that for the same.
 
 const CardComponent = (props) => {
-  console.log(props.restaurant.data);
+  // console.log(props.restaurant.data);
   const resto = props.restaurant.data;
   const {cloudinaryImageId,name,cuisines,avgRating} = resto;
   return (
@@ -17,6 +17,7 @@ const CardComponent = (props) => {
     </div>
   );
 };
+
 //HW - why I write export default?
 export default CardComponent;
 
