@@ -50,7 +50,7 @@ class ProfileComponent extends Component {
     });
   }
 
-  componentDidUpdate(x,y){
+  componentDidUpdate(prevProps, prevState){
     console.log("ProfileComponent - componentDidUpdate");
     // console.log("ProfileComponent - componentDidUpdate - x"+ x.u);
     // console.log("ProfileComponent - componentDidUpdate - y"+ y.u);
