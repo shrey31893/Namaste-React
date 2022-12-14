@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CardComponent from "./CardComponent";
+
 const RestaurantComponent = () => {
   const { id } = useParams(); //for route params
   const [restaurantData, setRestaurantData] = useState([]); // to get data from our function to our componetn.
