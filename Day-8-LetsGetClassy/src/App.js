@@ -8,6 +8,7 @@ import { title } from "./utils/constants.js"; // -- named export.
 // import * as constants from './constants.js'  -- usage -- {{constants.title}}
 import SearchBar from "./components/SearchBar.js";
 import NoResultFoundComponent from "./components/NoResultFoundComponent.js";
+import ProfileComponent from "./components/ProfileComponent.js";
 import {
   createBrowserRouter,
   Link,
@@ -17,6 +18,7 @@ import {
 import AboutUs from "./components/AboutUs.js";
 import ErrorComponent from "./components/ErrorComponent.js";
 import RestaurantComponent from "./components/RestaurantComponent.js";
+import ProfileComponentCC from "./components/ProfileComponent copy.js";
 
 const HeadingComponent = () => {
   return (
@@ -102,12 +104,24 @@ const appRouter = createBrowserRouter([
         path: "/search",
         element: <BodyComponent />,
       },
+      {
+        path: "/aboutus",
+        element: <AboutUs />,
+        children: [
+          {
+            path: 'profile',
+            element: <ProfileComponent name={"shrey from props"}/>,
+            children:[
+              {
+                path: 'profilecc',
+                element: <ProfileComponentCC name={"shrey from props"}/>
+              }
+            ]
+          }
+        ]
+      }
     ],
-  },
-  {
-    path: "/aboutus",
-    element: <AboutUs />,
-  },
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
