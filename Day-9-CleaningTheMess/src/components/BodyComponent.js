@@ -12,6 +12,7 @@ const BodyComponent = () => {
     }, []);
   
     return (
+      
       <div className="Card-Container">
         <SearchBar
           setFilteredRestaurants={setFilteredRestaurants}
