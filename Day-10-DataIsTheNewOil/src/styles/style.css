@@ -1,0 +1,15 @@
+.card {
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+}
+
+#card>img {
+    height: 100px;
+    width: 100px;
+}
+
+.Card-Container {
+    display: flex;
+}
