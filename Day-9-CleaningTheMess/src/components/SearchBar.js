@@ -1,6 +1,7 @@
 import { useState } from "react";
 //import data from "./data.json";
 import stateObj from "../utils/state-city.json";
+import useCities from "./useCities.js";
 
 // now this becomes pure functions - who takes parameter and returns the filtered data.
 const searchRestaurants = (searchText, restaurants) => {
@@ -12,8 +13,8 @@ const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
   const [searchText, setSearchText] = useState("");
   const [stateName, setStateName] = useState("");
   const [cityName, setCityName] = useState("");
-  // console.log("restaurants", restaurants.data);
-  // console.log("stateObj", Object.keys(stateObj));
+  var cityList = useCities(stateName);
+
   return (
     <div className="search">
       <form
@@ -47,7 +48,7 @@ const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
             setStateName(e.target.value);
           }}
         >
-          {Object.keys(stateObj).map((state1, index) => {
+          {Object.keys(stateObj).map((state1) => {
             return (
               <option key={state1} value={state1}>
                 {state1}
@@ -55,10 +56,12 @@ const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
             );
           })}
         </select>
+        <br />
+        <b>using normal way</b>
         <select
           value={cityName}
           onChange={(e) => {
-            setCityName(e.target.value);            
+            setCityName(e.target.value);
             console.log(cityName);
           }}
         >
@@ -71,6 +74,22 @@ const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
               const cityExtracted = stateObj[stateName][city];
               return <option key={cityExtracted}>{cityExtracted}</option>;
             })}
+        </select>
+        <br />
+        <b>using custom hook way :</b>
+        <select
+          value={cityName}
+          onChange={(e) => {
+            setCityName(e.target.value);
+          }}
+        >
+          <option>using hook way</option>
+          {cityList &&
+            cityList.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
         </select>
         <button
           onClick={() => {
