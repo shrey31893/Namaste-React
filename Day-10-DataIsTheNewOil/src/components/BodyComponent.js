@@ -6,6 +6,7 @@ const BodyComponent = () => {
     //const [filteredRestaurants, setFilteredRestaurants] = useState(data);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
+    const [stateNameForPassing,setStateNameForPassing] = useState("");
   
     useEffect(() => {
       fetchData();
@@ -17,8 +18,10 @@ const BodyComponent = () => {
         <SearchBar
           setFilteredRestaurants={setFilteredRestaurants}
           restaurants={restaurants}
+          setStateNameForPassing = {setStateNameForPassing}
         />
-        <CardContainerComponent filteredRestaurants={filteredRestaurants} />
+        <CardContainerComponent filteredRestaurants={filteredRestaurants}
+        stateNameForPassing = {stateNameForPassing} />
       </div>
     );
   

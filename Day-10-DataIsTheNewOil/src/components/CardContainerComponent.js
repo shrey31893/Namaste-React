@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import CardComponent from "./CardComponent";
 import NoResultFoundComponent from "./NoResultFoundComponent.js"
 
-const CardContainerComponent = ({ filteredRestaurants }) => {
+const CardContainerComponent = ({ filteredRestaurants,stateNameForPassing }) => {
   if (filteredRestaurants.length == 0) return <NoResultFoundComponent />;
 
   const cards =
@@ -13,6 +13,7 @@ const CardContainerComponent = ({ filteredRestaurants }) => {
           <CardComponent
             restaurant={restaurantData}
             key={restaurantData?.data?.id}
+            stateNameForPassing = {stateNameForPassing}
           />
         </Link>
       );

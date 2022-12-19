@@ -4,7 +4,7 @@
 // we can re-use this component
 // we always need to export that for the same.
 
-const CardComponent = ({ restaurant }) => {
+const CardComponent = ({ restaurant, stateNameForPassing }) => {
   console.log("in card restaurant", restaurant);
   //known as early return
   if (!restaurant && !restaurant?.data || restaurant.length == 0) return null;
@@ -21,6 +21,7 @@ const CardComponent = ({ restaurant }) => {
       <h2>{name}</h2>
       <h3>{cuisines.join(",")}</h3>
       <h4>{avgRating} stars</h4>
+      <h5> state is - {stateNameForPassing}</h5>
     </div>
   );
 };

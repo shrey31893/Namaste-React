@@ -1,5 +1,6 @@
 import { title } from "../utils/constants.js";
 import { Link } from "react-router-dom";
+import UserContext from "./UserContext.js";
 
 const HeadingComponent = () => {
   return (
@@ -9,7 +10,20 @@ const HeadingComponent = () => {
       &nbsp;
       <Link to="/aboutus">aboutus</Link>
 
+      {/* before */}
+      {/* <UserContext.Consumer>
+        {(data) => {
+          return <span>here - {data}</span>;
+        }}
+      </UserContext.Consumer> */}
+
+      {/* After */}
+      <UserContext.Consumer>
+        {({contextEmail}) => {
+          return <h3><span>here - {contextEmail}</span></h3>;
+        }}
+      </UserContext.Consumer>
     </div>
   );
 };
- export default HeadingComponent;
+export default HeadingComponent;

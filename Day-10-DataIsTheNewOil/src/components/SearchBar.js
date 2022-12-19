@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 //import data from "./data.json";
 import stateObj from "../utils/state-city.json";
 import useCities from "./useCities.js";
+import UserContext from "./UserContext";
 
 // now this becomes pure functions - who takes parameter and returns the filtered data.
 const searchRestaurants = (searchText, restaurants) => {
@@ -9,14 +10,21 @@ const searchRestaurants = (searchText, restaurants) => {
   return restaurants?.filter((x) => x.data.name.includes(searchText));
 };
 
-const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
+const SearchBar = ({ setFilteredRestaurants, restaurants, setStateNameForPassing }) => {
   const [searchText, setSearchText] = useState("");
   const [stateName, setStateName] = useState("");
   const [cityName, setCityName] = useState("");
   var cityList = useCities(stateName);
+  
+  //Before
+  // const email = useContext(UserContext);
+
+  // After
+  const {contextEmail, setContextEmail} = useContext(UserContext);
 
   return (
     <div className="search">
+      <h4>inside search comp context using hooks - {contextEmail}</h4>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -46,6 +54,7 @@ const SearchBar = ({ setFilteredRestaurants, restaurants }) => {
           title="eeasef"
           onChange={(e) => {
             setStateName(e.target.value);
+            setStateNameForPassing(e.target.value);
           }}
         >
           {Object.keys(stateObj).map((state1) => {
