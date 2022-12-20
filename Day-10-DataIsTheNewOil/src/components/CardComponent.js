@@ -4,17 +4,21 @@
 // we can re-use this component
 // we always need to export that for the same.
 
+import { useContext } from "react";
+import ThemeContext from "./ThemeContext";
+
 const CardComponent = ({ restaurant, stateNameForPassing }) => {
   console.log("in card restaurant", restaurant);
+  const { ThemeStyle, setThemeStyle } = useContext(ThemeContext);
   //known as early return
-  if (!restaurant && !restaurant?.data || restaurant.length == 0) return null;
+  if ((!restaurant && !restaurant?.data) || restaurant.length == 0) return null;
 
   // console.log(props.restaurant.data);
   const resto = restaurant.data;
   console.log("resto", resto);
   const { cloudinaryImageId, name, cuisines, avgRating } = resto;
   return (
-    <div id="card" className="card">
+    <div id="card" className={ThemeStyle == "dark" ? "card" : "whiteCard"}>
       <img
         src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
       />
