@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import UserContext from "./UserContext.js";
 import { useState } from "react";
 import ThemeContext from "./ThemeContext.js";
+import DefaultValueTestContext from "./DefaultValueTestContext.js";
 
 const AppLayoutComponent = () => {
   const [ctEmail, setCtEmail] = useState("mydefaultstate@email.com");
@@ -21,6 +22,7 @@ const AppLayoutComponent = () => {
     //   {/* <BeautifulCardComponent /> */}
     // </UserContext.Provider>
 
+    <DefaultValueTestContext.Provider value={[]}>
     <ThemeContext.Provider value={{ThemeStyle: ctTheme, setThemeStyle: setCtTheme}}>
       <UserContext.Provider
         value={{ contextEmail: ctEmail, setContextEmail: setCtEmail }}
@@ -32,6 +34,7 @@ const AppLayoutComponent = () => {
         {/* <BeautifulCardComponent /> */}
       </UserContext.Provider>
     </ThemeContext.Provider>
+    </DefaultValueTestContext.Provider>
   );
 };
 
