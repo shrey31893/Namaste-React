@@ -25,7 +25,7 @@ const CardComponent = ({ restaurant, stateNameForPassing }) => {
       <h2 className="font-bold">{name}</h2>
       <h3>{cuisines.join(",")}</h3>
       <h4>{avgRating} stars</h4>
-      <h5> state is - {stateNameForPassing}</h5>
+      <h5> states are is - {stateNameForPassing}</h5>
     </div>
   );
 };
