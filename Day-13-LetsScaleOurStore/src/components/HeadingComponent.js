@@ -8,7 +8,7 @@ const HeadingComponent = () => {
   console.log(cartItems);
 
   return (
-    <div className="flex px-10 py-4 justify-between bg-pink-50">
+    <div className="flex px-10 py-4 justify-between bg-pink-50 sticky top-0 z-50">
       {/* <h1 className="text-3xl font-bold underline p-5 flex m-2 ml-4 pt-6 px py">
         {title}
       </h1> */}

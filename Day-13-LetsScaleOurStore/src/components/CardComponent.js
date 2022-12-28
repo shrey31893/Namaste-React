@@ -18,12 +18,17 @@ const CardComponent = ({ restaurant, stateNameForPassing }) => {
   console.log("resto", resto);
   const { cloudinaryImageId, name, cuisines, avgRating } = resto;
   return (
-    <div id="card" className="m-3 p-3 w-50 rounded-lg">
+    <div
+      id="card"
+      className="m-2 p-5 w-45 rounded-lg border-solid border-2 border-black-600"
+    >
       <img
+        className="h-45 w-45"
         src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
       />
       <h2 className="font-bold">{name}</h2>
       <h3>{cuisines.join(",")}</h3>
+      <hr />
       <h4>{avgRating} stars</h4>
       <h5> states are is - {stateNameForPassing}</h5>
     </div>

@@ -4,6 +4,7 @@ import RestaurantComponent from "../components/RestaurantComponent.js";
 import ProfileComponentCC from "../components/ProfileComponent copy.js";
 import ProfileComponent from "../components/ProfileComponent.js";
 import AppLayoutComponent from "../components/AppLayoutComponent.js";
+import CartComponent from "../components/CartComponent.js";
 // import BodyComponent from "../components/BodyComponent.js";
 import { lazy, Suspense } from "react";
 
@@ -33,6 +34,10 @@ export const routeConfig = [
             <BodyComponent />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <CartComponent />,
       },
       {
         path: "/aboutus",
